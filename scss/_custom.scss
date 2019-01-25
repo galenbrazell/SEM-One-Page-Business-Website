@@ -1,9 +1,20 @@
 /* Custom CSS */
 
+html,
+body {
+  position: fixed;
+  overflow: hidden;
+}
+
 .mtnback {
   bottom: -10%;
 }
 
+.smoothscroll {
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
 /* Parallax Test */
 
@@ -14,22 +25,24 @@
 .parallax {
   position: relative;
   -webkit-perspective: 1px;
-          perspective: 1px;
+  perspective: 1px;
   -webkit-perspective-origin: 50% 50%;
-          perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .mountains {
   position: relative;
   width: 100vw;
   height: 95vh;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   z-index: -1;
 }
+
 .peak,
 .logo {
   position: absolute;
@@ -38,58 +51,69 @@
   bottom: 0;
   left: 0;
   -webkit-transform-origin: 50% 60%;
-          transform-origin: 50% 60%;
+  transform-origin: 50% 60%;
 }
+
 .peak.p0,
 .logo.p0 {
   -webkit-transform: translateZ(-40px) scale(41);
-          transform: translateZ(-40px) scale(41);
+  transform: translateZ(-40px) scale(41);
 }
+
 .peak.p1,
 .logo.p1 {
   -webkit-transform: translateZ(-25px) scale(26);
-          transform: translateZ(-25px) scale(26);
+  transform: translateZ(-25px) scale(26);
 }
+
 .peak.p2,
 .logo.p2 {
   -webkit-transform: translateZ(-15px) scale(16);
-          transform: translateZ(-15px) scale(16);
+  transform: translateZ(-15px) scale(16);
 }
+
 .peak.p3,
 .logo.p3 {
   -webkit-transform: translateZ(-8px) scale(9);
-          transform: translateZ(-8px) scale(9);
+  transform: translateZ(-8px) scale(9);
 }
+
 .peak.p4,
 .logo.p4 {
   -webkit-transform: translateZ(-5px) scale(6);
-          transform: translateZ(-5px) scale(6);
+  transform: translateZ(-5px) scale(6);
 }
+
 .peak.p5,
 .logo.p5 {
   -webkit-transform: translateZ(-4px) scale(5);
-          transform: translateZ(-4px) scale(5);
+  transform: translateZ(-4px) scale(5);
 }
+
 .peak.p6,
 .logo.p6 {
   -webkit-transform: translateZ(-3px) scale(4);
-          transform: translateZ(-3px) scale(4);
+  transform: translateZ(-3px) scale(4);
 }
+
 .peak.p7,
 .logo.p7 {
   -webkit-transform: translateZ(-2px) scale(3);
-          transform: translateZ(-2px) scale(3);
+  transform: translateZ(-2px) scale(3);
 }
+
 .peak.p8,
 .logo.p8 {
   -webkit-transform: translateZ(-1px) scale(2);
-          transform: translateZ(-1px) scale(2);
+  transform: translateZ(-1px) scale(2);
 }
+
 .peak.p9,
 .logo.p9 {
   -webkit-transform: translateZ(-0.5px) scale(1.5);
-          transform: translateZ(-0.5px) scale(1.5);
+  transform: translateZ(-0.5px) scale(1.5);
 }
+
 .peak img {
   position: absolute;
   width: 110%;
@@ -97,6 +121,7 @@
   left: -5%;
   bottom: -5%;
 }
+
 .logo img {
   position: absolute;
   width: 110%;
@@ -104,6 +129,7 @@
   left: -5%;
   bottom: -40%;
 }
+
 .overlay {
   position: absolute;
   width: 100vw;
@@ -113,22 +139,26 @@
   background: linear-gradient(#7168b5 0%, #418eab 50%, #83b6c9 100%);
   opacity: 0.7;
 }
+
 .multiply {
   opacity: 1;
   mix-blend-mode: overlay;
 }
+
 .logo {
   -webkit-transform: translateZ(-2px) scale(1.3);
-          transform: translateZ(-2px) scale(1.3);
-      z-index: 0;
+  transform: translateZ(-2px) scale(1.3);
+  z-index: 0;
 }
+
 .logo {
   font-size: 10rem;
   color: #333;
   position: absolute;
   padding: 0;
-  text-shadow: 0 50px 20px rgba(0,0,0,0.3);
+  text-shadow: 0 50px 20px rgba(0, 0, 0, 0.3);
 }
+
 main {
   position: relative;
   width: 100vw;
@@ -145,20 +175,14 @@ main {
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
-
-  
-}
+@media (min-width: 1281px) {}
 
 /* 
   ##Device = Laptops, Desktops
   ##Screen = B/w 1025px to 1280px
 */
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-  
-  
-}
+@media (min-width: 1025px) and (max-width: 1280px) {}
 
 /* 
   ##Device = Tablets, Ipads (portrait)
@@ -166,17 +190,19 @@ main {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  
-.mountains {
-  height: 50vh;
-}
-.peak img {
+
+  .mountains {
+    height: 50vh;
+  }
+
+  .peak img {
     bottom: 27%;
-}
-.logo img {
+  }
+
+  .logo img {
     bottom: 50%;
-}
-  
+  }
+
 }
 
 /* 
@@ -185,17 +211,19 @@ main {
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
-.mountains {
-  height: 70vh;
-}
-.peak img {
+
+  .mountains {
+    height: 70vh;
+  }
+
+  .peak img {
     bottom: 3%;
-}
-.logo img {
+  }
+
+  .logo img {
     bottom: -10%;
-}
-  
+  }
+
 }
 
 /* 
@@ -204,17 +232,19 @@ main {
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-  
-.mountains {
-  height: 50vh;
-}
-.peak img {
+
+  .mountains {
+    height: 50vh;
+  }
+
+  .peak img {
     bottom: 27%;
-}
-.logo img {
+  }
+
+  .logo img {
     bottom: 50%;
-}
-  
+  }
+
 }
 
 /* 
@@ -223,15 +253,23 @@ main {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
-.mountains {
-  height: 50vh;
-}
-.peak img {
-    bottom: 27%;
-}
-.logo img {
+
+  .mountains {
+    height: 60vh;
+  }
+
+  .peak img {
+    width: 180%;
+    left: -40%;
+    bottom: 10%;
+  }
+
+  .logo img {
     bottom: 50%;
-}
-  
+  }
+
+  .logo {
+    transform: translateZ(-2px) scale(2);
+  }
+
 }

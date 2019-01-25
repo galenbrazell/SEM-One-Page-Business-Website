@@ -223,7 +223,7 @@ main {
 */
 @media (min-width: 320px) and (max-width: 480px) {
   .mountains {
-    height: 50vh;
+    height: 40vh;
   }
   .peak img {
     bottom: 27%;
