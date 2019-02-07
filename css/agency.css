@@ -694,63 +694,7 @@ body {
   height: 100vh;
 }
 
-.smoothscroll {
-  height: 100%;
-  overflow-y: scroll;
-}
-
 /* Parallax Test */
-.parallax-wrap {
-  position: relative;
-  -webkit-perspective: 1px;
-  perspective: 1px;
-  -webkit-perspective-origin: 50% 50%;
-  perspective-origin: 50% 50%;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  /*	-webkit-overflow-scrolling: touch;*/
-}
-
-.mountains {
-  position: relative;
-  width: 100vw;
-  height: 95vh;
-  /*	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;*/
-  z-index: -1;
-}
-
-.peak,
-.logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  -webkit-transform-origin: 50% 60%;
-  transform-origin: 50% 60%;
-}
-
-.peak.p1,
-.logo.p1 {
-  -webkit-transform: translateZ(-2px) scale(3);
-  transform: translateZ(-2px) scale(3);
-}
-
-.peak.p2,
-.logo.p2 {
-  -webkit-transform: translateZ(-1px) scale(2);
-  transform: translateZ(-1px) scale(2);
-}
-
-.peak.p3,
-.logo.p3 {
-  -webkit-transform: translateZ(-0.5px) scale(1.5);
-  transform: translateZ(-0.5px) scale(1.5);
-}
-
 .peak img {
   position: absolute;
   width: 110%;
@@ -765,12 +709,6 @@ body {
   height: auto;
   left: -5%;
   bottom: -40%;
-}
-
-.logo {
-  -webkit-transform: translateZ(-2px) scale(1.3);
-  transform: translateZ(-2px) scale(1.3);
-  z-index: 0;
 }
 
 .overlay {
@@ -789,10 +727,62 @@ body {
 	##Device = Desktops
 	##Screen = 1281px to higher resolution desktops
 */
-/* 
+@media (min-width: 1281px) {
+  /* 
 	##Device = Laptops, Desktops
 	##Screen = B/w 1025px to 1280px
 */
+  .parallax-wrap {
+    position: relative;
+    -webkit-perspective: 1px;
+    perspective: 1px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .mountains {
+    position: relative;
+    width: 100vw;
+    height: 95vh;
+    /*	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;*/
+    z-index: -1;
+  }
+  .peak,
+  .logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transform-origin: 50% 60%;
+    transform-origin: 50% 60%;
+  }
+  .peak.p1,
+  .logo.p1 {
+    -webkit-transform: translateZ(-2px) scale(3);
+    transform: translateZ(-2px) scale(3);
+  }
+  .peak.p2,
+  .logo.p2 {
+    -webkit-transform: translateZ(-1px) scale(2);
+    transform: translateZ(-1px) scale(2);
+  }
+  .peak.p3,
+  .logo.p3 {
+    -webkit-transform: translateZ(-0.5px) scale(1.5);
+    transform: translateZ(-0.5px) scale(1.5);
+  }
+  .logo {
+    -webkit-transform: translateZ(-2px) scale(1.3);
+    transform: translateZ(-2px) scale(1.3);
+    z-index: 0;
+  }
+}
+
 /* 
 	##Device = Tablets, Ipads (portrait)
 	##Screen = B/w 768px to 1024px
@@ -864,7 +854,18 @@ body {
     bottom: 34%;
   }
   .logo {
-    -webkit-transform: translateZ(-2px) scale(2);
-    transform: translateZ(-2px) scale(2);
+    size: 50%;
+  }
+  .parallax-wrap {
+    position: relative;
+    -webkit-perspective: 1px;
+    perspective: 1px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 }
