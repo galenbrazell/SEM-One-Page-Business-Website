@@ -711,27 +711,62 @@ body {
   bottom: -40%;
 }
 
-.overlay {
+/* Fog Test */
+@-webkit-keyframes foglayer_moveme {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes foglayer_moveme {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+.fog .fog__layer1, .fog .fog__layer2 {
+  height: 110%;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#7168b5), color-stop(50%, #418eab), to(#83b6c9));
-  background: linear-gradient(#7168b5 0%, #418eab 50%, #83b6c9 100%);
-  opacity: 0.7;
+  width: 200%;
+  opacity: 0.6;
+}
+
+.fog .fog__layer1--img1, .fog .fog__layer2--img2 {
+  float: left;
+  height: 110%;
+  width: 50%;
+  opacity: 0.6;
+}
+
+.fog__layer1 {
+  -webkit-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+  animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+}
+
+.fog__layer1--img1 {
+  background: url("/img/header/fog01.png") center center/cover no-repeat transparent;
+}
+
+.fog__layer2 {
+  -webkit-animation: foglayer_02_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+  animation: foglayer_02_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+}
+
+.fog__layer2--img2 {
+  background: url("/img/header/fog02.png") center center/cover no-repeat transparent;
 }
 
 /* Custom Breakpoint CSS */
 /* 
-	##Device = Desktops
-	##Screen = 1281px to higher resolution desktops
+##Device = Desktops and anything higher than iPad Pro in landscape
+##Screen = 1367px to higher resolution desktops
 */
-@media (min-width: 1281px) {
-  /* 
-	##Device = Laptops, Desktops
-	##Screen = B/w 1025px to 1280px
-*/
+@media (min-width: 1367px) {
   .parallax-wrap {
     position: relative;
     -webkit-perspective: 1px;
@@ -742,13 +777,15 @@ body {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #746cad), color-stop(30%, #89a1ab), to(#8bb1bf));
+    background: linear-gradient(#746cad 0, #89a1ab 30%, #8bb1bf 100%);
   }
-  .mountains {
+  .mountains-wrap {
     position: relative;
     width: 100vw;
     height: 95vh;
-    /*	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;*/
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     z-index: -1;
   }
   .peak,
@@ -783,78 +820,20 @@ body {
   }
 }
 
-/* 
-	##Device = Tablets, Ipads (portrait)
-	##Screen = B/w 768px to 1024px
+/*
+##Rest of the Devices fall back to this and remove parallax effect, Base line is iPad Pro
 */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .mountains {
-    height: 50vh;
-  }
-  .peak img {
-    bottom: 27%;
+@media (max-width: 1366px) {
+  .mountains-wrap {
+    position: relative;
+    height: 90vh;
   }
   .logo img {
-    bottom: 50%;
-  }
-}
-
-/* 
-	##Device = Tablets, Ipads (landscape)
-	##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .mountains {
-    height: 70vh;
-  }
-  .peak img {
-    bottom: 3%;
-  }
-  .logo img {
-    bottom: -10%;
-  }
-}
-
-/* 
-	##Device = Low Resolution Tablets, Mobiles (Landscape)
-	##Screen = B/w 481px to 767px
-*/
-@media (min-width: 481px) and (max-width: 767px) {
-  .mountains {
-    height: 75vh;
-  }
-  .peak img {
-    bottom: -3%;
-  }
-  .logo img {
-    bottom: -40%;
-  }
-}
-
-/* 
-	##Device = Most of the Smartphones Mobiles (Portrait)
-	##Screen = B/w 320px to 479px
-*/
-@media (min-width: 320px) and (max-width: 480px) {
-  .mountains {
-    height: 60vh;
-  }
-  .peak img {
-    width: 180%;
-    left: -40%;
-    bottom: 10%;
-  }
-  .peak.p3 img {
-    bottom: 7%;
-  }
-  .peak.p2 img {
-    left: -20%;
-  }
-  .logo img {
-    bottom: 34%;
-  }
-  .logo {
-    size: 50%;
+    position: absolute;
+    width: 50%;
+    height: auto;
+    left: 25%;
+    bottom: auto;
   }
   .parallax-wrap {
     position: relative;
@@ -867,5 +846,81 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #746cad), color-stop(30%, #89a1ab), to(#8bb1bf));
+    background: linear-gradient(#746cad 0, #89a1ab 30%, #8bb1bf 100%);
+  }
+}
+
+/* 
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .mountains-wrap {
+    height: 58vh;
+  }
+  .logo img {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .mountains-wrap {
+    height: 80vh;
+  }
+  .logo img {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Portrait)
+##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .mountains-wrap {
+    height: 58vh;
+  }
+  .logo img {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+  .mountains-wrap {
+    height: 90vh;
+  }
+  .logo img {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .mountains-wrap {
+    height: 58vh;
+  }
+  .logo img {
+    width: 70%;
+    left: 15%;
   }
 }
