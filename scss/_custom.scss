@@ -8,6 +8,10 @@ body {
     height: 100vh;
 }
 
+#services {
+  height: 1200px;
+}
+
 /* Parallax Test */
 
 .peak img {
@@ -29,37 +33,45 @@ body {
 /* Fog Test */
 
 @keyframes foglayer_moveme {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
-  }
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
 }
 
-.fog .fog__layer1, .fog .fog__layer2 {
-  height: 110%;
-  position: absolute;
-  width: 200%;
-      opacity: 0.6;
+.fog .fog__layer1,
+.fog .fog__layer2 {
+    height: 110%;
+    position: absolute;
+    width: 200%;
+    opacity: 0.6;
 }
-.fog .fog__layer1--img1, .fog .fog__layer2--img2 {
-  float: left;
-  height: 110%;
-  width: 50%;
-      opacity: 0.6;
+
+.fog .fog__layer1--img1,
+.fog .fog__layer2--img2 {
+    float: left;
+    height: 110%;
+    width: 50%;
+    opacity: 1;
 }
+
 .fog__layer1 {
-  animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+    animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
 }
+
 .fog__layer1--img1 {
-  background: url("/img/header/fog01.png") center center / cover no-repeat transparent;
+    background: url("/img/header/fog01.png") center center / cover no-repeat transparent;
 }
+
 .fog__layer2 {
-  animation: foglayer_02_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+    animation: foglayer_02_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
 }
+
 .fog__layer2--img2 {
-  background: url("/img/header/fog02.png") center center / cover no-repeat transparent;
+    background: url("/img/header/fog02.png") center center / cover no-repeat transparent;
 }
 
 /* Custom Breakpoint CSS */
@@ -81,15 +93,15 @@ body {
         height: 100vh;
         overflow-x: hidden;
         overflow-y: scroll;
-        background: linear-gradient(#746cad 0,#89a1ab 30%,#8bb1bf 100%);
+        background: linear-gradient(#746cad 0, #89a1ab 30%, #8bb1bf 100%);
     }
 
     .mountains-wrap {
         position: relative;
         width: 100vw;
         height: 95vh;
-        	-webkit-transform-style: preserve-3d;
-transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
         z-index: -1;
     }
 
@@ -160,7 +172,7 @@ transform-style: preserve-3d;
         overflow-x: hidden;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-        background: linear-gradient(#746cad 0,#89a1ab 30%,#8bb1bf 100%);
+        background: linear-gradient(#746cad 0, #89a1ab 30%, #8bb1bf 100%);
     }
 }
 
