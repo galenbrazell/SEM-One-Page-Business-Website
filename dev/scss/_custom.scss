@@ -1,0 +1,208 @@
+/* Custom CSS */
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.mountains-wrap {
+    position: relative;
+    height: 80vh;
+    background: linear-gradient(#746cad 0, #89a1ab 30%, #8bb1bf 100%);
+}
+
+.peak img {
+    position: absolute;
+    width: 110%;
+    left: -5%;
+    bottom: -5%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.logo img {
+    width: 60%;
+    position: relative;
+}
+
+.text-muted {
+    color: #ababab!important;
+}
+
+/* Fog Movement */
+
+@keyframes foglayer_moveme {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+.fog .fog__layer1,
+.fog .fog__layer2 {
+    height: 105%;
+    position: absolute;
+    width: 200%;
+    opacity: 0.4;
+}
+
+.fog .fog__layer1--img1,
+.fog .fog__layer2--img2 {
+    float: left;
+    height: 100%;
+    width: 50%;
+    opacity: 1;
+}
+
+.fog__layer1 {
+    animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+}
+
+.fog__layer1--img1 {
+    background: url("../img/header/fog01.png") center center / cover no-repeat transparent;
+}
+
+.fog__layer2 {
+    animation: foglayer_02_opacity 10s linear infinite, foglayer_moveme 30s linear infinite;
+}
+
+.fog__layer2--img2 {
+    background: url("../img/header/fog02.png") center center / cover no-repeat transparent;
+}
+
+/* Custom Breakpoint CSS */
+
+/* 
+##Device = Desktops and anything higher than iPad Pro in landscape
+##Screen = 1367px to higher resolution desktops
+*/
+
+@media (min-width: 1367px) {
+
+}
+
+
+/*
+##Rest of the Devices fall back to this and remove parallax effect, Base line is iPad Pro
+*/
+
+@media (max-width: 1366px) {
+
+.mountains-wrap {
+    height: 70vh;
+}
+.logo img {
+    width: 100%;
+}
+}
+
+/* 
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+.mountains-wrap {
+    height: 60vh;
+}
+
+}
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+.peak img {
+    position: absolute;
+    width: 220%;
+    left: -55%;
+}
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+.mountains-wrap {
+    height: 85vh;
+}
+.peak img {
+    position: absolute;
+    width: 130%;
+    left: -15%;
+}
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Portrait)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+.peak img {
+    position: absolute;
+    width: 220%;
+    left: -55%;
+}
+.h2, h2 {
+    font-size: 1.5rem;
+}
+section h2.section-heading {
+    font-size: 30px;
+}
+}
+
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+.mountains-wrap {
+    height: 85vh;
+}
+.peak img {
+    position: absolute;
+    width: 130%;
+    left: -15%;
+}
+.h2, h2 {
+    font-size: 1.5rem;
+}
+section h2.section-heading {
+    font-size: 30px;
+}
+}
+
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+.peak img {
+    position: absolute;
+    width: 220%;
+    left: -55%;
+}
+.h2, h2 {
+    font-size: 1.5rem;
+}
+section h2.section-heading {
+    font-size: 30px;
+}
+}
