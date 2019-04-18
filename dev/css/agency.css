@@ -709,15 +709,20 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 100%;
 }
 
 .logo img {
-  width: 60%;
-  position: relative;
+  width: 100%;
+  display: block;
+  height: 100%;
+  max-width: 770px;
+  z-index: 99;
 }
 
 .text-muted {
@@ -789,7 +794,7 @@ body {
     height: 70vh;
   }
   .logo img {
-    width: 100%;
+    width: 50%;
   }
 }
 
@@ -813,6 +818,9 @@ body {
     width: 220%;
     left: -55%;
   }
+  .logo img {
+    width: 80%;
+  }
 }
 
 /* 
@@ -821,7 +829,7 @@ body {
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .mountains-wrap {
-    height: 85vh;
+    height: 90vh;
   }
   .peak img {
     position: absolute;
@@ -867,6 +875,9 @@ body {
   section h2.section-heading {
     font-size: 30px;
   }
+  .logo img {
+    width: 50%;
+  }
 }
 
 /* 
@@ -884,5 +895,8 @@ body {
   }
   section h2.section-heading {
     font-size: 30px;
+  }
+  .logo img {
+    width: 100%;
   }
 }
